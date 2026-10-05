@@ -42,7 +42,15 @@ explore: baseball_schedule_testing {}
 
 explore: connection_reg_r3 {}
 
-explore: fiscal_calendar_table {}
+explore: fiscal_calendar_table {
+  join: baseball_schedule{
+    type: left_outer
+    sql: ${baseball_schedule.start_date_date}.startDate;;
+    relationship: many_to_one
+  }
+}
+
+
 
 explore: newpartition {}
 
@@ -63,4 +71,3 @@ explore: hourly_table {}
 explore: lr_tr90_f1791211283992_pdt_sql_runner_query {}
 
 explore: baseball_schedule {}
-
