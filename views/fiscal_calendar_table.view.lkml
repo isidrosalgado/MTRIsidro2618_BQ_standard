@@ -1,6 +1,7 @@
 view: fiscal_calendar_table {
   sql_table_name: `baseball_schedules.fiscal_calendar_table` ;;
 
+
   dimension: fiscal_period_of_year {
     type: string
     description: "A custom period name (such as 'P01')."
@@ -61,5 +62,13 @@ view: fiscal_calendar_table {
   }
   measure: count {
     type: count
+  }
+  measure: pop {
+    type: period_over_period
+    description: "Order count from the previous year"
+    based_on_time: reference_month
+    based_on: fiscal_period_of_year_num
+    period: year
+    kind: previous
   }
 }
