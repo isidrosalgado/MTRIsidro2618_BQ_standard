@@ -3,6 +3,7 @@ view: baseball_schedule {
 
   dimension: attendance {
     type: number
+    hidden: yes
     sql: ${TABLE}.attendance ;;
   }
   dimension: away_team_id {
