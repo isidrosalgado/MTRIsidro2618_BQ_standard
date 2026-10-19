@@ -1,17 +1,9 @@
 view: baseball_schedule {
   sql_table_name: `baseball_schedules.baseball_schedule` ;;
 
-  dimension: attendance {
-    type: number
-    hidden: yes
-    sql: ${TABLE}.attendance ;;
-  }
-  dimension: away_team_id {
-    type: string
-    sql: ${TABLE}.awayTeamId ;;
-  }
   dimension: away_team_name {
     type: string
+    hidden: yes
     sql: ${TABLE}.awayTeamName ;;
   }
   dimension_group: created {
